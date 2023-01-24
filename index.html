@@ -46,6 +46,32 @@
             <span class="user-nav__notification">13</span>
           </div>
 
+          <!-- adding code for theme switcher -->
+          <div class="user-nav__icon-box">
+            <svg class="user-nav__icon">
+              <use xlink:href="img/sprite.svg#icon-cog"></use>
+            </svg>
+            <div class="dropdown">
+              <ul class="dropdown__content">
+                <li class="dropdown__content-item">theme</li>
+              </ul>
+
+              <form class="color-picker" action="">
+                <fieldset>
+                  <legend class="visually-hidden">Pick a color scheme</legend>
+                  <label for="theme" class="visually-hidden">Pink theme</label
+                  ><input type="radio" name="theme" id="pink" checked />
+
+                  <label for="theme" class="visually-hidden">Blue theme</label
+                  ><input type="radio" name="theme" id="blue" />
+
+                  <label for="theme" class="visually-hidden">Green theme</label
+                  ><input type="radio" name="theme" id="green" />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
           <div class="user-nav__user">
             <img
               src="img/user.jpg"
@@ -266,9 +292,8 @@
             <button class="btn">
               <span class="btn__visible">Book now</span>
               <span class="btn__invisible">Only 4 rooms left</span>
-              </button>
+            </button>
           </div>
-
         </main>
       </div>
     </div>

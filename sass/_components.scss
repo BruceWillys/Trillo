@@ -407,7 +407,7 @@
       mask-size: cover;
       background-image: none;
     }
-   }
+  }
 }
 
 ////////////////////////////////////////////////
@@ -585,4 +585,112 @@
     outline: none;
     animation: pulsate 1s infinite;
   }
+}
+
+///////////////////////////////////////////
+/// DROPDOWN MENU
+
+.dropdown {
+  // display: flex;
+  border-radius: 0 0 1rem 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-grey-light-1);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: -2000;
+  transform: translateY(-100%);
+  transition: all .5s;
+
+  &__content {
+    color: black;
+    // padding: 3px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    list-style-type: none;
+
+    &-item {
+      text-transform: uppercase;
+      font-family: sans-serif;
+      font-size: 1.3rem;
+      font-weight: 100;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.user-nav__icon-box:hover .dropdown {
+  // display: block;
+  transform: translateY(0);
+  width: 100%;
+  z-index: 2000;
+}
+
+////////////////////////////////////
+/// VISUALLY HIDDEN
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+///////////////////////////
+/// COLOR PICKER
+.color-picker > fieldset {
+  border: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--color-grey-light-1);
+  padding: .5rem 1rem;
+  border-radius: 0 0 1rem 1rem;
+  // width: 140px;
+}
+
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 1px solid var(--radio-color, currentColor);
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
+.color-picker input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#pink {
+  --radio-color:var(--color-primary);
+}
+.color-picker input[type="radio"]#blue {
+  --radio-color:blue;
+}
+.color-picker input[type="radio"]#green {
+  --radio-color:green;
+}
+
+:root:has(#pink:checked) {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;;
+}
+:root:has(#blue:checked) {
+  --color-primary: #006aff;
+  --color-primary-light: #2982ff;
+  --color-primary-dark: #0000ff;;
+}
+:root:has(#green:checked) {
+  --color-primary: #2ac166;
+  --color-primary-light: #00FF65;
+  --color-primary-dark: #035825;
 }
